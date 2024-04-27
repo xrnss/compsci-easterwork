@@ -6,6 +6,13 @@ $(window).on('load', function () {
                 let catImage = json[0].url; // Finds the URL for the cat image in the object data
 
                 $("#catpicture").attr("src", catImage); // Sets the "source" element of the picture to the URL of the cat image we just got.
+
+                let Breed = json[0].breed; // Finds breed data inside the object data
+                if (Breed != null) { // Checks if there was breed data attached
+                    $("#breed").text("Breed Data: " + Breed);
+                } else {
+                    $("#breed").text("Breed Data: N/A"); // Changes the text appropriately 
+                }
             });
     }
 
